@@ -12,6 +12,7 @@ view: profit_center_amounts_hierarchy_sample {
   dimension: child_hierarchy {
     type: string
     sql: ${TABLE}.ChildHierarchy ;;
+    drill_fields: [profit_center_prctr]
   }
   dimension: description {
     type: string
@@ -24,6 +25,7 @@ view: profit_center_amounts_hierarchy_sample {
   dimension: parent_hierarchy {
     type: string
     sql: ${TABLE}.ParentHierarchy ;;
+    drill_fields: [child_hierarchy,profit_center_prctr]
   }
   dimension: profit_center_prctr {
     type: string

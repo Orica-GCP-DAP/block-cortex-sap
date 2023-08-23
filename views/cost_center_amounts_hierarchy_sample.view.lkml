@@ -12,6 +12,7 @@ view: cost_center_amounts_hierarchy_sample {
   dimension: child_hierarchy {
     type: string
     sql: ${TABLE}.ChildHierarchy ;;
+    drill_fields: [cost_center_kostl]
   }
   dimension: cost_center_kostl {
     type: string
@@ -28,6 +29,7 @@ view: cost_center_amounts_hierarchy_sample {
   dimension: parent_hierarchy {
     type: string
     sql: ${TABLE}.ParentHierarchy ;;
+    drill_fields: [child_hierarchy,cost_center_kostl]
   }
   measure: count {
     type: count
